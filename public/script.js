@@ -305,7 +305,8 @@ function addItemMesa() { // Permite adicionar um novo item a uma mesa
   document.getElementById('itens-mesa-lista').appendChild(d);
 }
 
-function recalcMesa() { //???
+function recalcMesa() { // Gerencia os dados de uma mesa
+
   let sub = 0;
   document.querySelectorAll('#itens-mesa-lista .item-row').forEach(row => {
     const sel = row.querySelector('.ip');
@@ -396,7 +397,7 @@ async function confirmarFechamento() { // Confirma o fechamento de uma mesa
   } catch (e) { toast('Erro: ' + e.message, 'err'); }
 }
 
-function ir(pg, btn) { // ???
+function ir(pg, btn) { // Ao utilizar o botão que chama essa função, haverá um aviso em relação a utilização de uma função referente a uma classe específica na hierarquia da pizzaria
   const perfil = document.getElementById('sb-perfil').textContent;
   if (pg === 'usuarios' && perfil !== 'Administrador') {
     toast('Acesso restrito a Administradores', 'err'); return;
@@ -599,7 +600,7 @@ async function carregarClientes(busca = '') {
 }
 
 let _t;
-function buscarCli(v) { // ???
+function buscarCli(v) { // Buscar clientes
   clearTimeout(_t);
   _t = setTimeout(() => carregarClientes(v), 400);
 }
@@ -738,7 +739,7 @@ function addItem() { // Função para adicionar um item ao pedido
   document.getElementById('itens-lista').appendChild(d);
 }
 
-function recalc() { // ???
+function recalc() { // Calcula o valor completo do pedido
   let sub = 0;
   document.querySelectorAll('#itens-lista .item-row').forEach(row => {
     const sel = row.querySelector('.ip');
